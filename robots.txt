@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# NEXTWave is on hold until launch; keep it out of search.
+Disallow: /nextwave
+
+# Thank-you pages stay crawlable so search engines can read their noindex tag.

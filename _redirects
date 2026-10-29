@@ -1,0 +1,9 @@
+# Old Squarespace addresses -> new site (keeps links, bookmarks and search results working)
+/about-us                   /about/                               301
+/about-us/*                 /about/                               301
+/contact-us                 /contact/                             301
+/s/Ri-CNU_Case_Study.pdf    /assets/docs/Ri-CNU-Case-Study.pdf    301
+/cart                       /                                     301
+# NEXTWave page is on hold; temporary until it returns
+/nextwave                   /                                     302
+/nextwave/*                 /                                     302

@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>How we design — Ruscella Immersive</title>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32-dark.png" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16-dark.png" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="description" content="How Ruscella Immersive designs immersive experiences in the round: the participant first, story second, technology last, guided by the taxonomy for immersive experience design.">
+<meta property="og:title" content="How we design — Ruscella Immersive">
+<meta property="og:description" content="How Ruscella Immersive designs immersive experiences in the round: the participant first, story second, technology last, guided by the taxonomy for immersive experience design.">
+<meta property="og:site_name" content="Ruscella Immersive">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FFFFFF; --paper-2:#F4F4F6; --ink:#333333; --ink-2:#5C5C5C; --rule:#E2E2E6;
+  --gold:#FFC31A; --gold-deep:#B58600; --violet:#5B21B6; --violet-2:#7C3AED; --night:#1A1A1A;
+  --serif:"Bodoni Moda", Georgia, serif;
+  --sans:"Inter", system-ui, -apple-system, sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  background:#FFFFFF; color-scheme:light;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:16px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.6}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 clamp(20px,5vw,64px)}
+
+/* nav */
+.top{position:relative;z-index:20;background:#6B6B70}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:74px}
+.top img{display:block;height:24px;width:auto}
+
+.top ul{list-style:none;display:flex;gap:clamp(14px,2.4vw,32px);margin:0;padding:0;font-size:14px}
+.top a{text-decoration:none;color:#FFFFFF;opacity:.82;transition:.2s}
+.top a:hover,.top a[aria-current]{opacity:1;color:var(--gold)}
+@media (max-width:760px){ .top ul{display:none} }
+
+/* intro */
+.intro{padding-top:clamp(60px,10vw,120px);padding-bottom:clamp(36px,6vw,64px)}
+.intro h1{font-family:var(--serif);font-weight:800;font-style:italic;font-size:clamp(36.8px,5.89vw,69.92px);line-height:1.03;
+  letter-spacing:-.015em;margin:0 0 22px;max-width:none;text-wrap:balance;font-variation-settings:"opsz" 9}
+.intro p{font-size:clamp(17px,1.6vw,20px);max-width:56ch;color:var(--ink-2);margin:0}
+.jump{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px}
+.jump a{text-decoration:none;font-size:14px;padding:11px 18px;border:1px solid var(--rule);border-radius:10px;transition:.2s}
+.jump a:hover{border-color:var(--gold);background:var(--gold);color:#1A1A1A}
+
+/* service blocks */
+.svc{border-top:1px solid var(--rule);padding:clamp(56px,8vw,104px) 0}
+.close.shade{background:var(--paper-2);border-top:0}
+.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,72px);align-items:start}
+@media (max-width:900px){ .svc-grid{grid-template-columns:1fr} }
+.svc h2{font-family:var(--serif);font-weight:700;font-size:clamp(27.6px,3.31vw,40.48px);line-height:1.1;margin:0 0 14px;font-variation-settings:"opsz" 9}
+.promise{font-family:var(--serif);font-style:italic;font-size:clamp(18.4px,2.02vw,24.84px);line-height:1.35;color:var(--violet);margin:0 0 22px;max-width:24ch;font-weight:600;font-variation-settings:"opsz" 9}
+.svc p.body{margin:0 0 24px;color:var(--ink-2);max-width:48ch}
+.deliver{list-style:none;margin:0 0 28px;padding:0;display:grid;gap:12px;max-width:48ch}
+.deliver li{position:relative;padding-left:19px;font-size:15px}
+.deliver li::before{content:"";position:absolute;left:0;top:9px;width:7px;height:7px;background:var(--violet);border-radius:1px}
+.fit{font-size:14px;color:var(--ink-2);border-left:2px solid var(--violet);padding-left:14px;margin:0 0 26px;max-width:46ch}
+.callout{background:var(--paper-2);border-left:3px solid var(--gold);border-radius:0 12px 12px 0;padding:20px 22px;margin:0 0 26px;max-width:48ch}
+.callout-eyebrow{display:block;font-size:11.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#8A6500;margin-bottom:6px}
+.callout .callout-title{margin:0 0 8px;font-family:var(--serif);font-weight:800;font-style:italic;font-size:20.24px;line-height:1.2;color:var(--ink);font-variation-settings:"opsz" 9}
+.callout p{font-size:15px}
+.callout p:last-child{margin:0}
+.proof{background:var(--paper-2);border-radius:12px;padding:18px 20px;margin:0 0 26px;max-width:48ch}
+.proof span{display:block;font-size:11.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#8A6500;margin-bottom:8px}
+.proof p{margin:0 0 10px;font-size:15px;color:var(--ink)}
+.proof b{font-weight:600}
+.proof a{font-size:14px;color:var(--ink);text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:3px;text-decoration-thickness:2px}
+.proof a:hover{color:var(--violet)}
+.cta{display:inline-flex;align-items:center;min-height:50px;padding:0 22px;border-radius:12px;text-decoration:none;
+  font-size:15px;font-weight:500;background:var(--gold);border:1px solid var(--gold);color:#1A1A1A;transition:.2s}
+.cta:hover{background:#FFD24D;border-color:#FFD24D}
+.cta.ghost{background:transparent;color:var(--ink);border-color:var(--rule);margin-left:10px}
+.cta.ghost:hover{border-color:var(--gold);background:var(--gold);color:#1A1A1A}
+
+/* visuals */
+.visual{position:relative;border-radius:14px;overflow:hidden;background:var(--paper-2);border:1px solid var(--rule)}
+.visual figcaption{position:absolute;left:14px;bottom:12px;font-size:12.5px;color:var(--ink-2);
+  background:color-mix(in srgb, var(--paper) 78%, transparent);padding:5px 10px;border-radius:7px}
+.plan{display:block;width:100%;height:auto;background:var(--paper-2)}
+.plan .draw{stroke-dasharray:1400;stroke-dashoffset:1400;transition:stroke-dashoffset 2.4s ease-out}
+.plan.in .draw{stroke-dashoffset:0}
+.pano-wrap{position:relative;aspect-ratio:4/3}
+#pano{position:absolute;inset:0;width:100%;height:100%;cursor:grab;touch-action:pan-y}
+#pano:active{cursor:grabbing}
+.pano-tag{position:absolute;right:12px;top:12px;font-size:12.5px;color:#F6F1E4;background:rgba(10,3,22,.62);
+  padding:6px 11px;border-radius:7px}
+
+/* timeline */
+.timeline{padding:26px 22px}
+.lab-stack{display:grid;gap:20px}
+.lab-photo img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover}
+.ixd{display:block;width:100%;height:auto}
+.tl{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:10px;position:relative}
+.tl::before{content:"";position:absolute;left:6px;right:6px;top:11px;height:2px;background:var(--rule)}
+.tl li{position:relative;padding-top:30px;font-size:13.5px;color:var(--ink-2)}
+.tl li::before{content:"";position:absolute;top:5px;left:0;width:14px;height:14px;border-radius:50%;
+  background:var(--paper-2);border:2px solid var(--violet)}
+.tl b{display:block;color:var(--ink);font-weight:500;font-size:15px}
+.tl .day{font-family:var(--serif);font-style:italic;color:var(--violet);font-weight:600;font-variation-settings:"opsz" 9}
+.tl-head{display:flex;align-items:baseline;gap:12px;margin-bottom:18px}
+.tl-head span{font-family:var(--serif);font-style:italic;font-weight:800;font-size:31.28px;line-height:1;font-variation-settings:"opsz" 9}
+
+/* close */
+.close{border-top:1px solid var(--rule);padding:clamp(56px,8vw,104px) 0;text-align:center}
+.close h2{font-family:var(--serif);font-weight:800;font-style:italic;font-size:clamp(27.6px,4.05vw,47.84px);margin:0 0 16px;font-variation-settings:"opsz" 9}
+.close p{color:var(--ink-2);max-width:50ch;margin:0 auto 28px}
+@media (prefers-reduced-motion: reduce){ .plan .draw{transition:none;stroke-dashoffset:0} html{scroll-behavior:auto} }
+
+/* ---- shared site chrome ---- */
+.top .menu{display:none;text-decoration:none;color:#FFFFFF;opacity:.82;font-size:14px;cursor:pointer;background:none;border:0;font-family:inherit}
+.nav-toggle{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+.nav-toggle:focus-visible ~ .menu{outline:2px solid var(--gold);outline-offset:3px}
+@media (max-width:760px){
+  .top .menu{display:inline-block}
+  .nav-toggle:checked ~ .menu{opacity:1;color:var(--gold)}
+  .nav-toggle:checked ~ ul{
+    display:flex;flex-direction:column;position:fixed;top:74px;left:0;right:0;bottom:0;
+    background:#6B6B70;margin:0;padding:28px clamp(20px,5vw,64px);gap:20px;z-index:40;
+    overflow-y:auto;font-size:20px;
+  }
+}
+.band{background:linear-gradient(180deg,#6B6B70 0%,#57575C 100%);color:#FFFFFF}
+.band .intro h1{color:var(--gold)}
+.band .intro p,.band .intro .lead{color:#FFFFFF}
+.band .intro p:not(.lead){opacity:.86}
+.band .jump a{border-color:var(--gold);color:#FFFFFF}
+.band .jump a:hover{border-color:var(--gold);background:var(--gold);color:#1A1A1A}
+.band + .svc, .band + section.block{border-top:0}
+.band + .projects{padding-top:clamp(48px,6vw,80px)}
+
+/* ---- site footer (shared) ---- */
+.sitefoot{background:#141414;color:#FFFFFF;font-family:var(--sans);font-size:14px;line-height:1.6;margin:0}
+.sf-wrap{max-width:1200px;margin:0 auto;padding-left:clamp(20px,5vw,64px);padding-right:clamp(20px,5vw,64px);box-sizing:border-box}
+.sf-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:48px;padding-top:clamp(72px,10vw,120px);padding-bottom:clamp(56px,8vw,96px)}
+.sf-name{margin:0 0 6px;font-family:var(--serif);font-weight:800;font-style:italic;font-size:23.92px;color:#FFFFFF;font-variation-settings:"opsz" 9}
+.sf-tag{margin:0 0 22px;color:rgba(255,255,255,.72)}
+.sf-contact{margin:0;color:rgba(255,255,255,.72)}
+.sf-eyebrow{margin:0 0 18px;font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#FFC31A}
+.sf-links ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(150px,auto));gap:14px 56px}
+.sitefoot a{color:#FFFFFF;text-decoration:none;opacity:.82;transition:color .2s,opacity .2s}
+.sitefoot a:hover,.sitefoot a:focus-visible{opacity:1;color:#FFC31A}
+.sf-base{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;
+  padding-top:24px;padding-bottom:calc(28px + env(safe-area-inset-bottom,0px));border-top:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.6);font-size:13px}
+.sf-social{list-style:none;margin:0;padding:0;display:flex;gap:18px}
+.sf-social a{display:inline-flex;width:22px;height:22px}
+.sf-social svg{width:100%;height:100%;fill:currentColor}
+@media (max-width:640px){ .sf-top{flex-direction:column} .sf-links ul{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 24px} }
+
+/* ---- house lights: pages dim up on arrival, dim down on leaving ---- */
+.houselights{position:fixed;inset:0;background:#000;z-index:9999;pointer-events:none;opacity:1;animation:hlUp .75s ease-out .05s forwards}
+@keyframes hlUp{to{opacity:0}}
+@media (prefers-reduced-motion:reduce){.houselights{display:none}}
+
+/* ==== stage nav (interior pages): transparent over the header, like the homepage ==== */
+.top{position:absolute;top:0;left:0;right:0;z-index:20;background:transparent}
+.top .wrap{max-width:none;height:auto;padding:26px clamp(20px,5vw,64px)}
+.top img{height:26px}
+.top ul{gap:clamp(16px,2.6vw,36px);letter-spacing:.02em}
+.top a{color:#F5CB49;opacity:1}
+.top a:hover,.top a[aria-current]{color:#F6F1E4;opacity:1}
+.top .menu{display:none;color:#F5CB49;opacity:1;letter-spacing:.02em;cursor:pointer;background:none;border:0;font:inherit;font-size:14px;text-decoration:none}
+.nav-toggle{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+.nav-toggle:focus-visible ~ .menu{outline:2px solid var(--gold);outline-offset:3px}
+@media (max-width:760px){
+  .top ul{display:none}
+  .top .menu{display:inline-block}
+  .nav-toggle:checked ~ .menu{color:var(--gold)}
+  .nav-toggle:checked ~ ul{display:flex;flex-direction:column;position:fixed;top:78px;left:0;right:0;bottom:0;
+    background:#212126;margin:0;padding:28px clamp(20px,5vw,64px);gap:20px;z-index:40;overflow-y:auto;font-size:20px}
+  .nav-toggle:checked ~ ul a{color:#F6F1E4}
+  .nav-toggle:checked ~ ul a:hover,.nav-toggle:checked ~ ul a[aria-current]{color:var(--gold)}
+}
+
+/* ==== ghost-light stage: a purple bulb behind the viewer, swaying;
+        light falls through window panes onto a dark wall; objects cut into it ==== */
+.gl-stage{position:relative;overflow:hidden;padding-top:78px;background:#212126}
+.gl-stage > :not(.gl-light){position:relative;z-index:1}
+.band .intro h1{color:var(--gold)}
+.gl-light{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;
+  background:linear-gradient(180deg,#323138 0%,#212126 100%);--d:150px}
+.gl-sway{animation:gl-swing 9s ease-in-out infinite alternate;will-change:transform}
+@keyframes gl-swing{
+  from{transform:translateX(calc(var(--dx) * -1)) skewX(calc(var(--sk) * -1))}
+  to  {transform:translateX(var(--dx)) skewX(var(--sk))}}
+/* bulb pool + faint wash: travel WITH the bulb */
+.gl-wash,.gl-pool{position:absolute;border-radius:50%;mix-blend-mode:screen;--dx:calc(var(--d) * -0.8);--sk:0deg}
+.gl-wash{width:2600px;height:2600px;left:calc(57% - 1300px);top:calc(46% - 1300px);
+  background:radial-gradient(closest-side, rgba(139,69,255,.06), rgba(139,69,255,0))}
+.gl-pool{width:950px;height:950px;left:calc(57% - 475px);top:calc(46% - 475px);
+  background:radial-gradient(closest-side, rgba(139,69,255,.48), rgba(139,69,255,.24) 45%, rgba(139,69,255,0))}
+/* window light + object shadows: travel AGAINST the bulb; nearer objects travel further */
+.gl-layer{position:absolute;top:0;bottom:0;left:-200px;right:-200px}
+.gl-layer svg{display:block;width:100%;height:100%}
+.gl-panes{mix-blend-mode:screen;filter:blur(10px);--dx:var(--d);--sk:2.4deg}
+.gl-objects{filter:blur(15px);opacity:.75;color:#17161B;--dx:calc(var(--d) * 1.54);--sk:4deg}
+@media (max-width:760px){
+  .gl-light{--d:70px}
+  .gl-pool{width:620px;height:620px;left:calc(60% - 310px);top:calc(30% - 310px)}
+}
+@media (prefers-reduced-motion:reduce){ .gl-sway{animation:none} }
+
+.more-link{color:var(--ink);font-weight:500;text-decoration:underline;text-decoration-color:var(--gold);text-decoration-thickness:2px;text-underline-offset:4px}
+.more-link::after{content:" \2192"}
+.more-link:hover{color:var(--violet)}
+.intro h1{max-width:19ch}
+/* bodoni-fat merged *//* how we design */
+.intro .lead + p{margin-top:14px}
+.svc.tight{border-top:0;padding-top:0}
+.crumb{margin:0 0 18px!important;font-size:13px!important;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:#FFFFFF;opacity:.9}
+.crumb a{color:var(--gold);text-decoration:none}
+.crumb a:hover{text-decoration:underline;text-underline-offset:3px}
+.eyebrow{display:block;font-size:11.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#8A6500;margin:0 0 12px}
+.order{list-style:none;counter-reset:o;margin:0 0 8px;padding:0;display:grid;gap:18px;max-width:48ch}
+.order li{counter-increment:o;position:relative;padding-left:46px}
+.order li::before{content:counter(o,decimal-leading-zero);position:absolute;left:0;top:-2px;font-family:var(--serif);font-style:italic;font-weight:800;font-size:22.08px;line-height:1.2;color:var(--gold-deep);font-variation-settings:"opsz" 9}
+.order b{display:block;font-weight:600;color:var(--ink)}
+.order span{font-size:15px;color:var(--ink-2)}
+.ring{background:var(--paper-2);border:1px solid var(--rule);border-radius:14px;margin:0;padding:10px}
+.ring svg{display:block;width:100%;height:auto}
+.ring figcaption{font-size:12.5px;color:var(--ink-2);text-align:center;padding:4px 10px 10px}
+.shadeband{background:var(--paper-2);padding:clamp(56px,8vw,104px) 0}
+.shadeband + .svc{border-top:0}
+.sec-h2{font-family:var(--serif);font-weight:700;font-size:clamp(27.6px,3.31vw,40.48px);line-height:1.1;margin:0 0 16px;font-variation-settings:"opsz" 9}
+.sec-intro{color:var(--ink-2);max-width:60ch;margin:0 0 clamp(32px,4vw,48px)}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,2vw,24px)}
+@media (max-width:980px){.steps{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.steps{grid-template-columns:1fr}}
+.steps li{background:var(--paper);border-radius:12px;padding:22px 22px 24px;border-top:3px solid var(--gold)}
+.steps .k{display:block;font-size:11.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#8A6500;margin-bottom:6px}
+.steps b{display:block;font-family:var(--serif);font-style:italic;font-weight:800;font-size:23.92px;line-height:1.15;margin-bottom:8px;color:var(--ink);font-variation-settings:"opsz" 9}
+.steps p{margin:0;font-size:15px;color:var(--ink-2)}
+.loopnote{margin:24px 0 0;font-size:14px;color:var(--ink-2)}
+.tax{background:var(--paper-2);border:1px solid var(--rule);border-radius:14px;margin:0;padding:clamp(18px,3vw,28px)}
+.tax svg{display:block;width:100%;height:auto}
+.tax figcaption{font-size:12.5px;color:var(--ink-2);margin-top:10px}
+.cite{font-size:13.5px;color:var(--ink-2);border-left:2px solid var(--violet);padding-left:14px;margin:0 0 26px;max-width:48ch}
+.cite i{font-style:italic}
+.btnrow{display:flex;flex-wrap:wrap;gap:10px}
+.btnrow .cta.ghost{margin-left:0}
+.dims-legend{display:flex;justify-content:space-between;align-items:center;gap:16px;margin:clamp(48px,6vw,72px) 0 18px;padding-top:24px;border-top:1px solid var(--rule)}
+.dims-legend span{font-size:11.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#8A6500}
+.dims-legend .range{display:flex;align-items:center;gap:10px;color:var(--ink-2)}
+.dims-legend .range i{display:block;width:72px;height:6px;border-radius:3px;background:linear-gradient(90deg,rgba(91,33,182,.14),#5B21B6)}
+.dims{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(14px,2vw,22px)}
+@media (max-width:820px){.dims{grid-template-columns:1fr}}
+.dim{background:var(--paper-2);border-radius:12px;padding:22px 22px 20px}
+.dim-head{display:flex;align-items:baseline;gap:12px}
+.dim .n{font-family:var(--serif);font-style:italic;font-weight:800;font-size:20.24px;color:var(--gold-deep);font-variation-settings:"opsz" 9}
+.dim h3{margin:0;font-family:var(--serif);font-weight:700;font-size:23.92px;line-height:1.15;color:var(--ink);font-variation-settings:"opsz" 9}
+.dim .tag{margin:2px 0 8px;font-family:var(--serif);font-style:italic;font-size:16.56px;color:var(--violet);font-weight:600;font-variation-settings:"opsz" 9}
+.dim .desc{margin:0 0 16px;font-size:14.5px;color:var(--ink-2)}
+.scale{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:4px}
+.scale li{position:relative;padding-top:12px;font-size:11.5px;line-height:1.3;color:var(--ink);hyphens:auto}
+@media (max-width:480px){.scale{gap:6px}.scale li{font-size:10.5px}}
+.scale li::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;border-radius:3px;background:#5B21B6;opacity:calc(.16 + var(--l) * .21)}
+
+
+.proof a.proj{font-size:inherit;text-decoration:none;color:inherit}.proof a.proj b{text-decoration:underline;text-decoration-color:rgba(255,195,26,.55);text-underline-offset:3px;text-decoration-thickness:1px}.proof a.proj:hover b{color:var(--violet);text-decoration-color:#FFC31A}
+
+/* ---- mobile nav: thumb-sized logo target (iOS) ---- */
+header a[href="/"]{display:inline-flex;align-items:center;padding:12px;margin:-12px;position:relative;z-index:2;-webkit-tap-highlight-color:transparent}
+header a[href="/"] img{pointer-events:none}
+
+/* ---- mobile menu: three lines that turn into an X ---- */
+:is(.nav,.top) .menu{align-items:center;justify-content:center;width:44px;height:44px;margin:-10px -10px -10px 0;padding:0;
+  color:var(--gold,#FFC31A);opacity:1;font-size:0;-webkit-tap-highlight-color:transparent;position:relative;z-index:41}
+:is(.nav,.top) .menu:focus-visible{outline:2px solid #FFC31A;outline-offset:2px;border-radius:8px}
+:is(.nav,.top) .menu .bars{position:relative;display:block;width:24px;height:16px}
+:is(.nav,.top) .menu .bars i{position:absolute;left:0;right:0;height:2px;border-radius:2px;background:currentColor;
+  transition:top .25s ease .15s,transform .25s ease,opacity .2s ease}
+:is(.nav,.top) .menu .bars i:nth-child(1){top:0}
+:is(.nav,.top) .menu .bars i:nth-child(2){top:7px}
+:is(.nav,.top) .menu .bars i:nth-child(3){top:14px}
+.nav-toggle:checked ~ .menu .bars i{transition:top .25s ease,transform .25s ease .15s,opacity .2s ease}
+.nav-toggle:checked ~ .menu .bars i:nth-child(1){top:7px;transform:rotate(45deg)}
+.nav-toggle:checked ~ .menu .bars i:nth-child(2){opacity:0}
+.nav-toggle:checked ~ .menu .bars i:nth-child(3){top:7px;transform:rotate(-45deg)}
+@media (max-width:760px){ :is(.nav,.top) .menu{display:inline-flex} }
+html.menu-open,html.menu-open body{overflow:hidden}
+@media (prefers-reduced-motion:reduce){ :is(.nav,.top) .menu .bars i{transition:none!important} }
+</style>
+</head>
+<body>
+<div class="houselights" aria-hidden="true"></div>
+
+<header class="top">
+  <div class="wrap">
+    <a href="/" aria-label="Ruscella Immersive"><img src="data:image/png;base64,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" alt="Ruscella Immersive"></a>
+    <nav aria-label="Primary"><input type="checkbox" id="nav-toggle" class="nav-toggle" tabindex="-1" aria-hidden="true"><ul id="site-menu"><li><a href="/services/" aria-current="page">Services</a></li><li><a href="/work/">Work</a></li><li><a href="/jj-ruscella/">JJ Ruscella</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul><button class="menu" type="button" aria-controls="site-menu" aria-expanded="false" aria-label="Open menu"><span class="bars" aria-hidden="true"><i></i><i></i><i></i></span></button></nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="gl-stage band"><div class="gl-light" aria-hidden="true"><div class="gl-wash gl-sway"></div><div class="gl-pool gl-sway"></div><div class="gl-layer gl-panes gl-sway"><svg viewBox="0 0 1840 560" preserveAspectRatio="xMaxYMid slice"><defs><linearGradient id="glp-hwd" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="rgb(180,134,255)" stop-opacity=".55"/><stop offset="1" stop-color="rgb(139,69,255)" stop-opacity=".25"/></linearGradient></defs><g fill="url(#glp-hwd)"><circle cx="1000" cy="190" r="150"/><rect x="1220" y="-40" width="170" height="620" rx="24" transform="skewX(-8)"/><rect x="1430" y="-40" width="170" height="620" rx="24" transform="skewX(-8)"/></g></svg></div><div class="gl-layer gl-objects gl-sway"><svg viewBox="0 0 1840 560" preserveAspectRatio="xMaxYMid slice" fill="currentColor"><path d="M1250 620 L1345 170 L1375 170 L1300 620 Z"/><path d="M1490 620 L1375 170 L1400 170 L1535 620 Z"/><rect x="1260" y="210" width="220" height="200" rx="6" transform="rotate(-4 1370 310)"/><rect x="1700" y="-40" width="18" height="260" transform="rotate(20 1709 90)"/><ellipse cx="1650" cy="235" rx="80" ry="40" transform="rotate(-25 1650 235)"/></svg></div></div><section class="intro wrap">
+    <p class="crumb"><a href="/services/#design">Immersive Design</a> · Method</p>
+    <h1>How we design.</h1>
+    <p class="lead">We design in the round. The participant stands at the centre, and everything we make is arranged around them.</p>
+    <p>It is how a stage director works: decide what each moment must do to the person inside it, then build only what serves that moment.</p>
+  </section></div>
+
+  <section class="svc">
+    <div class="wrap svc-grid">
+      <div>
+        <span class="eyebrow">The principle</span>
+        <h2>The participant is the protagonist.</h2>
+        <p class="body">Film and television keep the audience outside a frame. An immersive experience has no frame. The participant stands inside the story, looks where they choose and acts. So we design around people, in this order:</p>
+        <ol class="order">
+          <li><b>People and their goals</b><span>Who steps inside, what they need, and what should change for them.</span></li>
+          <li><b>Story</b><span>The role they play, and the moments that deliver the outcome.</span></li>
+          <li><b>Experience</b><span>What they see, hear, feel and do, moment by moment.</span></li>
+          <li><b>Technology, last</b><span>Headset, dome, venue or browser, chosen to serve the design.</span></li>
+        </ol>
+      </div>
+      <figure class="ring">
+        <svg class="ixd ixd-a" viewBox="0 8 640 652" role="img" aria-label="Designed in the round: the participant and their goals at the centre, surrounded by story, then experience, with technology as the outer delivery layer, all circled by an iterative loop of design, build, playtest and refine" xmlns="http://www.w3.org/2000/svg">
+<style>
+.ixd-a .orbit{transform-box:view-box;transform-origin:320px 300px;animation:ixdspina 18s linear infinite}
+.ixd-a .ripple{transform-box:view-box;transform-origin:320px 300px;animation:ixdripplea 5s ease-out infinite}
+.ixd-a .ripple.r2{animation-delay:2.5s}
+.ixd-a .spin-slow{transform-box:view-box;transform-origin:320px 300px;animation:ixdspina 90s linear infinite}
+@keyframes ixdspina{to{transform:rotate(360deg)}}
+@keyframes ixdripplea{0%{transform:scale(1);opacity:.55}100%{transform:scale(3.36);opacity:0}}
+@media (prefers-reduced-motion: reduce){.ixd-a .orbit,.ixd-a .ripple,.ixd-a .spin-slow{animation:none}.ixd-a .ripple{opacity:0}}
+</style>
+<defs>
+<path id="at0" d="M214 300 A106 106 0 0 1 426 300" fill="none"/>
+<path id="ab0" d="M202 300 A118 118 0 0 0 438 300" fill="none"/>
+<path id="at1" d="M159 300 A161 161 0 0 1 481 300" fill="none"/>
+<path id="ab1" d="M147 300 A173 173 0 0 0 493 300" fill="none"/>
+<path id="at2" d="M104 300 A216 216 0 0 1 536 300" fill="none"/>
+<path id="ab2" d="M92 300 A228 228 0 0 0 548 300" fill="none"/>
+</defs>
+<circle cx="320" cy="300" r="235" fill="#5B21B6" fill-opacity=".035" stroke="#5B21B6" stroke-opacity=".55" stroke-width="1.2" stroke-dasharray="3 6"/>
+<circle cx="320" cy="300" r="180" fill="#5B21B6" fill-opacity=".04" stroke="#5B21B6" stroke-opacity=".75" stroke-width="1.3"/>
+<circle cx="320" cy="300" r="125" fill="#5B21B6" fill-opacity=".05" stroke="#5B21B6" stroke-width="1.5"/>
+<g class="spin-slow" stroke="#5B21B6" stroke-opacity=".22" stroke-width="1" stroke-dasharray="2 5">
+<path d="M394.0 300.0L551.0 300.0"/>
+<path d="M384.1 337.0L520.1 415.5"/>
+<path d="M357.0 364.1L435.5 500.1"/>
+<path d="M283.0 364.1L204.5 500.1"/>
+<path d="M255.9 337.0L119.9 415.5"/>
+<path d="M246.0 300.0L89.0 300.0"/>
+<path d="M255.9 263.0L119.9 184.5"/>
+<path d="M283.0 235.9L204.5 99.9"/>
+<path d="M357.0 235.9L435.5 99.9"/>
+<path d="M384.1 263.0L520.1 184.5"/>
+</g>
+<circle class="ripple" cx="320" cy="300" r="70" fill="none" stroke="#FFC31A" stroke-width="2"/><circle class="ripple r2" cx="320" cy="300" r="70" fill="none" stroke="#FFC31A" stroke-width="2"/>
+<circle cx="320" cy="300" r="70" fill="#FFF7DD" stroke="#B58600" stroke-width="1.8"/>
+<g fill="none" stroke="#B58600" stroke-width="2.2" stroke-linecap="round"><circle cx="320" cy="279" r="9"/><path d="M303 308q0-17 17-17 17 0 17 17"/></g>
+<text font-family="Inter, system-ui, sans-serif" x="320" y="334" text-anchor="middle" font-size="15" font-weight="700" letter-spacing="2.4" fill="#333333">PEOPLE</text>
+<text x="320" y="351" text-anchor="middle" font-family="Bodoni Moda, Georgia, serif" font-weight="700" style="font-variation-settings:'opsz' 9" font-style="italic" font-size="16" fill="#B58600">and their goals</text>
+<text font-family="Inter, system-ui, sans-serif" font-size="15.5" font-weight="600" fill="#5B21B6" letter-spacing="2.6"><textPath href="#at0" startOffset="50%" text-anchor="middle">STORY</textPath></text>
+<text font-style="italic" font-family="Bodoni Moda, Georgia, serif" font-weight="700" style="font-variation-settings:'opsz' 9" font-size="16" font-weight="400" fill="#5C5C5C" letter-spacing="0.2"><textPath href="#ab0" startOffset="50%" text-anchor="middle">the role they play</textPath></text>
+<text font-family="Inter, system-ui, sans-serif" font-size="15.5" font-weight="600" fill="#5B21B6" letter-spacing="2.6"><textPath href="#at1" startOffset="50%" text-anchor="middle">EXPERIENCE</textPath></text>
+<text font-style="italic" font-family="Bodoni Moda, Georgia, serif" font-weight="700" style="font-variation-settings:'opsz' 9" font-size="16" font-weight="400" fill="#5C5C5C" letter-spacing="0.2"><textPath href="#ab1" startOffset="50%" text-anchor="middle">what they see, feel and do</textPath></text>
+<text font-family="Inter, system-ui, sans-serif" font-size="15.5" font-weight="600" fill="#5B21B6" letter-spacing="2.6"><textPath href="#at2" startOffset="50%" text-anchor="middle">TECHNOLOGY</textPath></text>
+<text font-style="italic" font-family="Bodoni Moda, Georgia, serif" font-weight="700" style="font-variation-settings:'opsz' 9" font-size="16" font-weight="400" fill="#5C5C5C" letter-spacing="0.2"><textPath href="#ab2" startOffset="50%" text-anchor="middle">headset · dome · venue · browser</textPath></text>
+<g stroke="#5B21B6" stroke-width="1.6" fill="none" stroke-linecap="round">
+<path d="M366.5 36.1A268 268 0 0 1 583.9 253.5"/>
+<path d="M583.9 346.5A268 268 0 0 1 366.5 563.9"/>
+<path d="M273.5 563.9A268 268 0 0 1 56.1 346.5"/>
+<path d="M56.1 253.5A268 268 0 0 1 273.5 36.1"/>
+</g>
+<path d="M579.8 247.8L583.9 253.5L585.8 246.7" fill="none" stroke="#5B21B6" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M372.2 559.8L366.5 563.9L373.3 565.8" fill="none" stroke="#5B21B6" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M60.2 352.2L56.1 346.5L54.2 353.3" fill="none" stroke="#5B21B6" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M267.8 40.2L273.5 36.1L266.7 34.2" fill="none" stroke="#5B21B6" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<text font-family="Inter, system-ui, sans-serif" x="522" y="100" text-anchor="start" font-size="15" font-weight="700" letter-spacing="2.2" fill="#B58600">DESIGN</text>
+<text font-family="Inter, system-ui, sans-serif" x="522" y="510" text-anchor="start" font-size="15" font-weight="700" letter-spacing="2.2" fill="#B58600">BUILD</text>
+<text font-family="Inter, system-ui, sans-serif" x="118" y="510" text-anchor="end" font-size="15" font-weight="700" letter-spacing="2.2" fill="#B58600">PLAYTEST</text>
+<text font-family="Inter, system-ui, sans-serif" x="118" y="100" text-anchor="end" font-size="15" font-weight="700" letter-spacing="2.2" fill="#B58600">REFINE</text>
+<g class="orbit"><circle cx="320" cy="32" r="6" fill="#FFC31A" stroke="#B58600" stroke-width="1.2"/></g>
+</svg>
+        <figcaption>Designed in the round: people at the centre, technology at the edge.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="shadeband">
+    <div class="wrap">
+      <span class="eyebrow">The method</span>
+      <h2 class="sec-h2">Design, build, playtest, refine.</h2>
+      <p class="sec-intro">We work in short loops with real participants in the room as early as possible. Nothing goes into full production until it works in rehearsal.</p>
+      <ol class="steps">
+        <li><span class="k">01</span><b>Design</b><p>Meet the people it is for, agree what should change for them, then stage story, space and sightlines around the participant.</p></li>
+        <li><span class="k">02</span><b>Build</b><p>Fast, rough versions: blocking, grey-box 3D, test captures. Just enough to step inside.</p></li>
+        <li><span class="k">03</span><b>Playtest</b><p>Put it in front of real participants. We watch what they do, not only what they say.</p></li>
+        <li><span class="k">04</span><b>Refine</b><p>Cut what does not serve the moment, strengthen what does, and loop again until it is ready to produce.</p></li>
+      </ol>
+      <p class="loopnote">Every loop is shorter and cheaper than the last, so budget goes to what participants will actually feel.</p>
+    </div>
+  </section>
+
+  <section class="svc" id="taxonomy">
+    <div class="wrap">
+      <div class="svc-grid">
+        <div>
+          <span class="eyebrow">The taxonomy</span>
+          <h2>A grammar for immersion.</h2>
+          <p class="promise">Immersion is what we design. Presence is what the participant feels.</p>
+          <p class="body">JJ Ruscella and Dr. Mohammad Obeid wrote the taxonomy to make immersion a set of deliberate choices. It describes any experience across ten dimensions, each on a five-level spectrum from basic to complex.</p>
+        </div>
+        <div>
+          <p class="body">Higher is not automatically better. The right level is the one that best serves the outcome and the participant, which is why technology is only one dimension of ten. We use the taxonomy to set every level on purpose, to evaluate experiences that already exist, and to give clients a shared language for what they are commissioning.</p>
+          <p class="body">Air University made it the foundation of the U.S. Air Force's Vector program. The interactive version, built with the University of Central Florida, is open to anyone.</p>
+          <p class="cite">J. J. Ruscella and M. F. Obeid, <i>A Taxonomy for Immersive Experience Design</i>. Peer reviewed; 7th International Conference of the Immersive Learning Research Network (iLRN), IEEE, 2021.</p>
+          <div class="btnrow">
+            <a class="cta" href="https://immersiveexperiencedesign.org/design.html" target="_blank" rel="noopener">Design with the taxonomy</a>
+            <a class="cta ghost" href="https://ieeexplore.ieee.org/document/9459328" target="_blank" rel="noopener">Read the paper</a>
+          </div>
+        </div>
+      </div>
+      <div class="dims-legend" aria-hidden="true"><span>The ten dimensions</span><span class="range">Basic <i></i> Complex</span></div>
+      <ol class="dims">
+        <li class="dim"><div class="dim-head"><span class="n">01</span><h3>Interactivity</h3></div><p class="tag">The invitation to act</p><p class="desc">How much participants can act within the experience, and whether their actions matter.</p><ol class="scale" aria-label="Interactivity levels, basic to complex"><li style="--l:0">Passive</li><li style="--l:1">Interactive</li><li style="--l:2">Problem solving</li><li style="--l:3">Physicalized</li><li style="--l:4">Interpersonal</li></ol></li>
+        <li class="dim"><div class="dim-head"><span class="n">02</span><h3>Embodiment</h3></div><p class="tag">Being in the story, for real</p><p class="desc">How physically, spatially and socially present participants feel in the storyworld.</p><ol class="scale" aria-label="Embodiment levels, basic to complex"><li style="--l:0">Detached</li><li style="--l:1">Watcher</li><li style="--l:2">First-person POV</li><li style="--l:3">Movement</li><li style="--l:4">Human-to-human</li></ol></li>
+        <li class="dim"><div class="dim-head"><span class="n">03</span><h3>Co-Participation</h3></div><p class="tag">The power of the many</p><p class="desc">How many people share or influence the experience, and how that is structured.</p><ol class="scale" aria-label="Co-Participation levels, basic to complex"><li style="--l:0">Single player</li><li style="--l:1">One-on-one</li><li style="--l:2">Group</li><li style="--l:3">Massively multiplayer</li><li style="--l:4">Secondary perspective</li></ol></li>
+        <li class="dim"><div class="dim-head"><span class="n">04</span><h3>Story</h3></div><p class="tag">The architecture of meaning</p><p class="desc">How narrative gives the experience meaning, from no story to one that adapts around the participant.</p><ol class="scale" aria-label="Story levels, basic to complex"><li style="--l:0">No story</li><li style="--l:1">Setting</li><li style="--l:2">Pre-created story</li><li style="--l:3">Choose your own</li><li style="--l:4">Interactive story</li></ol></li>
+        <li class="dim"><div class="dim-head"><span class="n">05</span><h3>Dynamics</h3></div><p class="tag">The engine of consequence</p><p class="desc">How the world responds to participants&#x27; actions, and what those actions can change.</p><ol class="scale" aria-label="Dynamics levels, basic to complex"><li style="--l:0">Pre-determined</li><li style="--l:1">Choice</li><li style="--l:2">Free will</li><li style="--l:3">Convo-reality</li><li style="--l:4">Adjustable POV</li></ol></li>
+        <li class="dim"><div class="dim-head"><span class="n">06</span><h3>Motivation</h3></div><p class="tag">The rules of engagement</p><p class="desc">Whether and how goals, feedback and rewards drive engagement.</p><ol class="scale" aria-label="Motivation levels, basic to complex"><li style="--l:0">Ungamified</li><li style="--l:1">Instruction</li><li style="--l:2">External process</li><li style="--l:3">Reinforcement</li><li style="--l:4">Reward system</li></ol></li>
+        <li class="dim"><div class="dim-head"><span class="n">07</span><h3>Immersive Technology</h3></div><p class="tag">The amplifier, not the art</p><p class="desc">The delivery platform, from no technology at all to fully mixed physical and digital systems.</p><ol class="scale" aria-label="Immersive Technology levels, basic to complex"><li style="--l:0">In real life</li><li style="--l:1">Flat media (2D)</li><li style="--l:2">AR</li><li style="--l:3">VR</li><li style="--l:4">XR</li></ol></li>
+        <li class="dim"><div class="dim-head"><span class="n">08</span><h3>Meta-Control</h3></div><p class="tag">The power to shape the world</p><p class="desc">Whether participants can shape the world and its rules, not just act inside them.</p><ol class="scale" aria-label="Meta-Control levels, basic to complex"><li style="--l:0">None</li><li style="--l:1">Journey</li><li style="--l:2">Character</li><li style="--l:3">World builder</li><li style="--l:4">World master</li></ol></li>
+        <li class="dim"><div class="dim-head"><span class="n">09</span><h3>Learning</h3></div><p class="tag">The architecture of understanding</p><p class="desc">How knowledge is delivered and absorbed within the experience.</p><ol class="scale" aria-label="Learning levels, basic to complex"><li style="--l:0">Elemental</li><li style="--l:1">Explicit</li><li style="--l:2">Implicit</li><li style="--l:3">Recall</li><li style="--l:4">Synthesis</li></ol></li>
+        <li class="dim"><div class="dim-head"><span class="n">10</span><h3>Data</h3></div><p class="tag">The ghost in the machine</p><p class="desc">What the experience knows about participants: identity, tracking and personalization.</p><ol class="scale" aria-label="Data levels, basic to complex"><li style="--l:0">Anonymous</li><li style="--l:1">Identity</li><li style="--l:2">In-session</li><li style="--l:3">Personalization</li><li style="--l:4">Biometrics</li></ol></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="svc tight">
+    <div class="wrap">
+      <div class="proof" style="max-width:none">
+        <span>Designed this way</span>
+        <p><a class="proj" href="/work/#air-university"><b>U.S. Air Force, Air University.</b></a> The taxonomy, now how Air Force commanders learn to evaluate and design immersive experiences.</p>
+        <p><a class="proj" href="/work/#rivere-ecological-center"><b>RIVERE Ecological Center.</b></a> Immersive spaces planned with the architects around the visitor, and a roadmap for $6 million in immersive technology.</p>
+        <p><a class="proj" href="/work/#voices-of-freedom"><b>Voices of Freedom.</b></a> An immersive history series that places visitors in the rooms where freedom was argued.</p>
+        <a href="/work/#air-university">See the work</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="close shade">
+    <div class="wrap">
+      <h2>Start with the person who steps inside.</h2>
+      <p>Tell us who the experience is for and what should change for them. We will design the rest around them.</p>
+      <a class="cta" href="/contact/">Let&rsquo;s design an experience</a>
+    </div>
+  </section>
+</main>
+
+<footer class="sitefoot" id="site-footer">
+  <div class="sf-wrap sf-top">
+    <div class="sf-brand">
+      <p class="sf-name">Ruscella Immersive</p>
+      <p class="sf-tag">Stories you step into.</p>
+      <p class="sf-contact"><a href="mailto:info@ruscellaimmersive.com">info@ruscellaimmersive.com</a><br>Orlando, Florida</p>
+    </div>
+    <nav class="sf-links" aria-label="Footer">
+      <p class="sf-eyebrow">Explore</p>
+      <ul>
+        <li><a href="/services/">Services</a></li><li><a href="/contact/">Contact</a></li>
+        <li><a href="/services/how-we-design/">How we design</a></li><li><a href="/press/">Press kit</a></li>
+        <li><a href="/work/">Work</a></li>
+        <li><a href="/jj-ruscella/">JJ Ruscella</a></li><li><a href="https://bethlehem-musical.com" target="_blank" rel="noopener">The Living Nativity</a></li>
+        <li><a href="/about/">About</a></li><li><a href="/labs/">Build your lab</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="sf-wrap sf-base">
+    <span>&copy; 2026 Ruscella Immersive. All rights reserved.</span>
+    <ul class="sf-social" aria-label="Social media">
+      <li><a href="#" aria-label="Ruscella Immersive on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4V21H3zM9.5 9.75h3.8v1.6h.06c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.1V21h-4v-4.9c0-1.17-.02-2.68-1.63-2.68-1.64 0-1.89 1.28-1.89 2.6V21h-4z"/></svg></a></li>
+      <li><a href="#" aria-label="Ruscella Immersive on Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-7.5h2.53l.38-2.93H13.5V8.7c0-.85.24-1.43 1.45-1.43h1.55V4.65a20.6 20.6 0 0 0-2.26-.12c-2.24 0-3.77 1.37-3.77 3.88v2.16H7.94v2.93h2.53V21z"/></svg></a></li>
+      <li><a href="#" aria-label="Ruscella Immersive on YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.77-1.77C18.27 5 12 5 12 5s-6.27 0-7.83.43A2.5 2.5 0 0 0 2.4 7.2 26 26 0 0 0 2 12a26 26 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.77 1.77C5.73 19 12 19 12 19s6.27 0 7.83-.43a2.5 2.5 0 0 0 1.77-1.77A26 26 0 0 0 22 12a26 26 0 0 0-.4-4.8zM10 15V9l5.2 3z"/></svg></a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const hl = document.querySelector('.houselights');
+  if (!hl || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  document.addEventListener('click', e => {
+    const a = e.target.closest('a[href]');
+    if (!a || a.hasAttribute('download') || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    if (a.target && a.target !== '_self') return;
+    const url = new URL(a.href, location.href);
+    if (url.origin !== location.origin || !/^https?:$/.test(url.protocol)) return;
+    if (url.pathname === location.pathname) return;
+    e.preventDefault();
+    hl.style.animation = 'none'; hl.style.transition = 'none'; hl.style.opacity = '0';
+    void hl.offsetWidth;
+    hl.style.transition = 'opacity .35s ease-in'; hl.style.opacity = '1';
+    setTimeout(() => { location.href = url.href; }, 360);
+  });
+  addEventListener('pageshow', ev => { if (ev.persisted){ hl.style.transition = 'none'; hl.style.opacity = '0'; } });
+})();
+</script>
+<script>
+/* mobile nav: close the menu after a tap, and when iPhone restores a page from history */
+(() => {
+  const t = document.getElementById('nav-toggle'), b = document.querySelector('header nav .menu');
+  if (!t || !b) return;
+  const set = open => {
+    t.checked = open;
+    b.setAttribute('aria-expanded', open ? 'true' : 'false');
+    b.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    document.documentElement.classList.toggle('menu-open', open);
+  };
+  b.addEventListener('click', e => { e.stopPropagation(); set(!t.checked); if (t.checked){ const first = document.querySelector('#site-menu a'); first && first.focus({preventScroll:true}); } });
+  document.querySelectorAll('#site-menu a').forEach(a => a.addEventListener('click', () => set(false)));
+  addEventListener('keydown', e => { if (e.key === 'Escape' && t.checked){ set(false); b.focus(); } });
+  addEventListener('pageshow', () => set(false));
+  matchMedia('(min-width:761px)').addEventListener('change', e => { if (e.matches) set(false); });
+})();
+</script>
+</body>
+</html>
